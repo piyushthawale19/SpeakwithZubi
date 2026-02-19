@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speak with Zubi 🧒</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ─── Splash / Welcome screen ─────────────────── -->
+    <div id="splash-screen" class="screen active">
+      <div class="splash-content">
+        <div class="zubi-avatar bounce">
+          <div class="avatar-face">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="mouth"></div>
+          </div>
+        </div>
+        <h1 class="title rainbow-text">Speak with Zubi!</h1>
+        <p class="subtitle">Your friendly picture buddy</p>
+
+        <div class="upload-area" id="upload-area">
+          <div class="upload-icon">🖼️</div>
+          <p>Drop a picture here<br />or tap to choose one!</p>
+          <input type="file" id="image-input" accept="image/*" hidden />
+        </div>
+
+        <div class="sample-images">
+          <p class="sample-label">Or try one of these:</p>
+          <div class="sample-grid">
+            <button
+              class="sample-btn"
+              data-src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=600"
+              title="Cute cat"
+            >
+              🐱
+            </button>
+            <button
+              class="sample-btn"
+              data-src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600"
+              title="Person smiling"
+            >
+              😊
+            </button>
+            <button
+              class="sample-btn"
+              data-src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600"
+              title="Nature scene"
+            >
+              🌿
+            </button>
+            <button
+              class="sample-btn"
+              data-src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=600"
+              title="Playground"
+            >
+              🎈
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── Main conversation screen ────────────────── -->
+    <div id="main-screen" class="screen">
+      <header class="top-bar">
+        <button id="back-btn" class="icon-btn" title="Go back">⬅️</button>
+        <div class="stars-display">
+          <span class="star-icon">⭐</span>
+          <span id="star-count">0</span>
+        </div>
+        <div class="timer-display" id="timer-display">⏱️ 0:00</div>
+      </header>
+
+      <!-- Image display area -->
+      <div class="image-container" id="image-container">
+        <img id="display-image" src="" alt="Picture to talk about" />
+        <div id="highlight-overlay" class="highlight-overlay"></div>
+        <div id="emoji-float" class="emoji-float"></div>
+      </div>
+
+      <!-- Zubi chat bubble -->
+      <div class="chat-area">
+        <div class="zubi-mini">
+          <div class="avatar-face mini">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="mouth"></div>
+          </div>
+        </div>
+        <div class="speech-bubble" id="speech-bubble">
+          <span id="bubble-text">Tap the mic and let's talk!</span>
+        </div>
+      </div>
+
+      <!-- Child's speech display -->
+      <div class="child-speech" id="child-speech">
+        <span id="child-text"></span>
+      </div>
+
+      <!-- Mic button -->
+      <div class="mic-container">
+        <button id="mic-btn" class="mic-btn" title="Hold to talk">
+          <div class="mic-icon">🎤</div>
+          <div class="mic-ring"></div>
+        </button>
+        <p class="mic-hint" id="mic-hint">Tap to start talking!</p>
+      </div>
+
+      <!-- Reward animation overlay -->
+      <div id="reward-overlay" class="reward-overlay hidden">
+        <div class="reward-star">⭐</div>
+        <div class="reward-text" id="reward-text"></div>
+      </div>
+    </div>
+
+    <!-- ─── Scripts ─────────────────────────────────── -->
+    <script src="js/tools.js"></script>
+    <script src="js/speech.js"></script>
+    <script src="js/conversation.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
